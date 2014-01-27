@@ -7,9 +7,9 @@ Withing Servoy logging is done through the application.output(message, [Level]) 
 * There is no mechanism to enable logging for a specific part of the code while disabling other parts
 * There is no way to know in code which is the active Log Level, thus log statements that require (complex) String concatenation to build up the Log message cannot be executed conditionally. This means that the overhead of the String concatenation is always there, even if the level of the Log statement is such that the Log statement will be ignored
 * There is no option to specify a different log configuration for a specific client
-*The action of inserting a Log statement for a certain level requires specifying a second parameter, which is A: often forgotten and B: takes a few extra steps while coding
+* The action of inserting a Log statement for a certain level requires specifying a second parameter, which is A: often forgotten and B: takes a few extra steps while coding
 
-The LogManager part of modUtils is designed to:
+The LogManager part of svyUtils is designed to:
 1. Reduce the overhead of Log statements 
 2. Allow fine-grained control over which Log statements result in actual logged messages at runtime
 3. Provide an easy to use API, to make inserting log  statements as straight forward as possible
@@ -19,7 +19,7 @@ The LogManager started live as a port of the open source [log4javascript](http:/
 # Quick start
 Want to get started and do the reading later? Check out the following snippet:
 ```javascript
-var log = scopes.modUtils$logManager.getLogger('com.mycompany.mysolution')
+var log = scopes.svyLogManager.getLogger('com.mycompany.mysolution')
 log.debug("Hello, I'm debuggin'")
 ```
 
@@ -31,14 +31,14 @@ In order to allow enabling or disabling the logging for certain parts of the cod
 
 Loggers are hierarchical, based on their name, which follows the dot notation. For example a logger with the name 'com.foo' is the parent of a logger with the name ```'com.foo.Bar'``` and a logger with the name ```'com'``` is the ancestor of both.
 
-Loggers are retrieved using the ```scopes.modUtils$logManager.getLogger``` method, passing the name of the desired logger as parameter.
+Loggers are retrieved using the ```scopes.svyLogManager.getLogger``` method, passing the name of the desired logger as parameter.
 
-At the top of the hierarchy is the so-called RootLogger, which can be retrieved using ```scopes.modUtils$logManager.getLogger(scopes.modUtils$logManager.ROOT_LOGGER_NAME)```
+At the top of the hierarchy is the so-called RootLogger, which can be retrieved using ```scopes.svyLogManager.getLogger(scopes.svyLogManager.ROOT_LOGGER_NAME)```
 
 ### Loggers
-As stated before, Loggers are retrieved using the ```scopes.modUtils$logManager.getLogger``` method, passing the name of the desired logger as parameter. Loggers expose the API to log messages for the available Log Levels (OFF, FATAL, ERROR, WARNING, INFO, DEBUG, TRACE, ALL) and the API to see if a certain Log Level is enabled for the Logger.
+As stated before, Loggers are retrieved using the ```scopes.svyLogManager.getLogger``` method, passing the name of the desired logger as parameter. Loggers expose the API to log messages for the available Log Levels (OFF, FATAL, ERROR, WARNING, INFO, DEBUG, TRACE, ALL) and the API to see if a certain Log Level is enabled for the Logger.
 
-Loggers are configured through the ```scopes.modUtils$logManager.loadConfig``` method, which takes a JavaScript object of type ```scopes.modUtils$logManager.CONFIG_TYPE_DEF``` as parameter.
+Loggers are configured through the ```scopes.svyLogManager.loadConfig``` method, which takes a JavaScript object of type ```scopes.svyLogManager.CONFIG_TYPE_DEF``` as parameter.
  
 # API
 
