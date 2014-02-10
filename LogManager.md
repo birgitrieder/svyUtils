@@ -21,7 +21,8 @@ Want to get started and do the reading later? Check out the following snippet:
 ```javascript
 var log = scopes.svyLogManager.getLogger('com.mycompany.mysolution')
 log.debug("Hello, I'm debuggin'")
-log.trace("Hello {}", name)
+var name = 'you'
+log.trace("Hello {}", name) //outputs "Hello you":
 ```
 
 # Architecture
