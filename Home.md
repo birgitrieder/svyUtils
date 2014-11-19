@@ -14,3 +14,7 @@ Also replaces (most) of the functionality of the [WebClientUtils plugin](https:/
 Smart Client utils
 ------------------
 Set of utility methods specifically for the Servoy Smart Client
+
+Excel utils
+------------------
+Set of utility methods for read, create and manipulate Excel Workbooks. Does not requires Microsoft Excel
