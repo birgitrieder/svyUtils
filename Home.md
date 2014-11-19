@@ -18,3 +18,7 @@ Set of utility methods specifically for the Servoy Smart Client
 Excel utils
 ------------------
 Set of utility methods for read, create and manipulate Excel Workbooks. Does not requires Microsoft Excel
+
+LogManagerAppenders Utils
+------------------
+Provides a set of Appenders plugins for the [LogManager](https://github.com/Servoy/svyUtils/wiki/LogManager) Loggers. The implemented appenders allow to append logs in database and in a log file 
