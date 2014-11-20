@@ -22,3 +22,7 @@ Set of utility methods for read, create and manipulate Excel Workbooks. Does not
 LogManagerAppenders Utils
 ------------------
 Provides a set of Appenders plugins for the [LogManager](https://github.com/Servoy/svyUtils/wiki/LogManager) Loggers. The implemented appenders allow to append logs in database and in a log file 
+
+UnitTest Utils
+------------------
+Utility methods for unit testing
