@@ -6,6 +6,12 @@ EventManager
 ------------
 Provides the ability to (de)register listeners for events and fire events. Aims to provide a way to decouple hard links in code between otherwise stand-alone code
 
+ApplicationCore
+------------
+It offers default implementations for the solutions onError and onDataBroadcast events and provides a module initialization mechanism.
+
+The aim of this module is to provide the API's for 3rd party modules to allow easy integration.
+
 Web Client utils
 ----------------
 Set of utility methods specifically for the Servoy Web Client
