@@ -102,22 +102,68 @@ The resulting xlsx file looks like this:
 ![Excel file](svyExcelUtils/images/sample_xlsx.png)
 
 # Reading excel files
-Typically, you want to access the data of an excel sheet. See this code snippet how svyExcelUtils helps you with that:
+Typically, you want to access the data of an excel sheet. This code snippet shows how svyExcelUtils helps you with that (using the example xlsx file created above):
 
 ```javascript
+//read workbook
 var workbook = scopes.svyExcelUtils.getWorkbook('C:\\Temp\\test.xlsx');
+//get sheet containing the data
 var sheet = workbook.getSheet('Test');
+//get the data from rows 1 to 5, column 1 and 2
 var data = sheet.getSheetData(true, 1, 5, 1, 2);
-application.output(data.getAsText('\t','\n','',true));
+//output result
+application.output(data.getAsText('\t', '\n', '', true));
 ```
-### Logger Hierarchy
 
+the output will look like this:
 
-### Loggers
+```
+Test 1	Test 2
+10.0	35.0
+15.0	47.0
+ 9.0	22.0
+10.0	33.0
+```
 
- 
-# API
+# Creating Excel files from foundsets or datasets
 
-# Configuration
- 
-# Plugins
+svyExcelUtils also makes it easy to perform the probably most common task when dealing with Excel files: creating Excel from either a JSFoundSet or a JSDataSet:
+
+```javascript
+//create a dataset
+var queryCustomers = datasources.db.example_data.customers.createSelect();
+queryCustomers.result.add(queryCustomers.columns.companyname);
+queryCustomers.result.add(queryCustomers.columns.address);
+queryCustomers.result.add(queryCustomers.columns.postalcode);
+queryCustomers.result.add(queryCustomers.columns.city);
+queryCustomers.result.add(queryCustomers.columns.country);
+var dsCustomers = databaseManager.getDataSetByQuery(queryCustomers, -1);
+	
+//create a xlsx workbook from the dataset, including all columns, using the given header names
+var workbook = scopes.svyExcelUtils.createWorkbookFromDataSet(
+	dsCustomers,
+	null,
+	['Company', 'Address', 'Zip', 'City', 'Country'], 
+	scopes.svyExcelUtils.FILE_FORMAT.XLSX);
+	
+workbook.sheetName = 'All Customers';
+	
+//create styles for header and rows
+var headerStyle = workbook.createHeaderStyle();
+headerStyle
+	.setFont('Calibri,0,11')
+	.setFillPattern(scopes.svyExcelUtils.FILL_PATTERN.SOLID_FOREGROUND)
+	.setFillForegroundColor(scopes.svyExcelUtils.INDEXED_COLOR.LIGHT_ORANGE)
+	.setAlignment(scopes.svyExcelUtils.ALIGNMENT.CENTER);
+workbook.headerStyle = headerStyle;
+	
+var rowStyle = workbook.createRowStyle();
+rowStyle
+	.setFont('Calibri,0,11');
+workbook.rowStyle = rowStyle;
+	
+//write to file
+workbook.writeToFile('C:\\Temp\\dataset.xlsx');
+//or get the xlsx data
+var bytes = workbook.getBytes();
+```
