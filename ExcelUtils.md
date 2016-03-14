@@ -24,7 +24,7 @@ Either remove or comment these lines out (by nesting them into a comment <!-- ..
 
 #### Add a few entries to the jnlp file
 
-The following lines need to be added to the **<resources>** section of the jnlp file:
+The following lines need to be added to the **`<resources>`** section of the jnlp file:
 
 ```xml
 <!-- Files needed for Apache POI -->
