@@ -167,3 +167,7 @@ workbook.writeToFile('C:\\Temp\\dataset.xlsx');
 //or get the xlsx data
 var bytes = workbook.getBytes();
 ```
+
+The resulting xlsx file looks like this:
+
+![JSDataSet Excel file](svyExcelUtils/images/dataset_xlsx.png)
