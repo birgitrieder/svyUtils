@@ -21,7 +21,7 @@ Smart Client utils
 ------------------
 Set of utility methods specifically for the Servoy Smart Client
 
-Excel utils
+[Excel utils](https://github.com/Servoy/svyUtils/wiki/ExcelUtils)
 ------------------
 Set of utility methods for read, create and manipulate Excel Workbooks. Does not requires Microsoft Excel
 
