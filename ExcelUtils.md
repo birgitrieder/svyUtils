@@ -8,7 +8,7 @@ For support of xlsx and docx (as supported by svyWordUtils), some additional lib
 
 To let a smart client know it needs to download these libraries, some adjustments to the jnlp file of the Jasper plugin (application_server/plugins/servoy_jasperreports.jar.jnlp) need to be made:
 
-##### Comment or remove poi-xxx.jar and xalan-xxx.jar
+#### Comment or remove poi-xxx.jar and xalan-xxx.jar
 
 In the jnlp file you will find some entries like these
 
@@ -20,9 +20,9 @@ In the jnlp file you will find some entries like these
    <package name="java_cup.runtime.*" part="xalan" recursive="true"/>
 ```
 
-Either remove or comment these lines out (by nesting them into a comment <!-- ... -->). To not run into conflicts in developer, remove these two files from application_server\plugins\servoy_jasperreports or rename them from *.jar to *.unused or whatever, so they don't get loaded by Servoy developer.
+Either remove or comment these lines out (by nesting them into a comment <!-- ... -->). To not run into **conflicts in developer, remove these two files** from application_server\plugins\servoy_jasperreports or rename them from *.jar to *.unused or whatever, so they don't get loaded by Servoy developer.
 
-##### Add a few entries to the jnlp file
+#### Add a few entries to the jnlp file
 
 ```xml
 <!-- Files needed for Apache POI -->
