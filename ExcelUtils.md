@@ -95,6 +95,9 @@ cell.setCellFormula("SUM(" + scopes.svyExcelUtils.getCellReferenceFromRange(2, 1
 var success = workbook.writeToFile("d:\\test.xlsx");
 ```
 
+The resulting xlsx file looks like this:
+
+![Alt attribute text Here](images/sample_xlsx.png)
 # Architecture
 
 ### Logger Hierarchy
