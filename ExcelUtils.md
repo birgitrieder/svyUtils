@@ -4,7 +4,7 @@ svyExcelUtils is a wrapper for Apache POI's excel library and allows to read and
 # Installation
 svyExcelUtils is dependent on some external libraries, some of which are already part of Servoy's Jasper plugin. So to use the functionality, you need to install at least the basic version of the Jasper plugin available here: https://www.servoyforge.net/projects/servoy-jasperreports/files
 
-For support of xlsx and docx (as supported by svyWordUtils), some additional libraries are required that can be downloaded here: **[poi.zip](/Servoy/svyUtils/wiki/svyExcelUtils/plugins/poi.zip)**. Please place all files inside the archive in application_server/plugins/poi.
+For support of xlsx and docx (as supported by svyWordUtils), **some additional libraries are required** that can be downloaded here: **[poi.zip](/Servoy/svyUtils/wiki/svyExcelUtils/plugins/poi.zip)**. Please place all files inside the archive in application_server/plugins/poi.
 
 To let a smart client know it needs to download these libraries, some adjustments to the jnlp file of the Jasper plugin (application_server/plugins/servoy_jasperreports.jar.jnlp) need to be made:
 
