@@ -8,9 +8,9 @@ Provides the ability to (de)register listeners for events and fire events. Aims 
 
 ApplicationCore
 ------------
-It offers default implementations for the solutions onError and onDataBroadcast events and provides a module initialization mechanism.
+Offers default implementations for the solution's onError and onDataBroadcast events and provides a module initialization mechanism.
 
-The aim of this module is to provide the API's for 3rd party modules to allow easy integration.
+The aim of this module is to provide the API's for easy integration of 3rd party modules.
 
 Web Client utils
 ----------------
