@@ -24,6 +24,8 @@ Either remove or comment these lines out (by nesting them into a comment <!-- ..
 
 #### Add a few entries to the jnlp file
 
+The following lines need to be added to the **<resources>** section of the jnlp file:
+
 ```xml
 <!-- Files needed for Apache POI -->
 <jar href="/plugins/poi/poi-3.14-20160307.jar" download="eager" version="%%version%%"/>
