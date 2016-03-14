@@ -44,10 +44,55 @@ You may sign the libraries in the poi directory just as you would sign any plugi
 # Creating Excel files
 Want to get started and do the reading later? Check out the following snippet:
 ```javascript
-var log = scopes.svyLogManager.getLogger('com.mycompany.mysolution')
-log.debug("Hello, I'm debuggin'")
-var name = 'you'
-log.trace("Hello {}", name) //outputs "Hello you":
+// Create workbook and sheet
+var workbook = scopes.svyExcelUtils.createWorkbook(scopes.svyExcelUtils.FILE_FORMAT.XLSX);
+var sheet = workbook.createSheet("Test");
+
+// Create style for the header
+var headerStyle = workbook.createCellStyle();
+headerStyle
+	.setFont("Arial,1,12")
+	.setFillPattern(scopes.svyExcelUtils.FILL_PATTERN.SOLID_FOREGROUND)
+	.setFillForegroundColor(scopes.svyExcelUtils.INDEXED_COLOR.LIGHT_ORANGE)
+	.setAlignment(scopes.svyExcelUtils.ALIGNMENT.CENTER);
+
+var rowNum = 1;
+
+// Create header row and cells
+var row = sheet.createRow(rowNum++);
+var cell = row.createCell(1);
+cell.setCellValue("Test 1", headerStyle);
+
+cell = row.createCell(2);
+cell.setCellValue("Test 2", headerStyle);
+
+// Create some data and write to the sheet
+var data = [[10, 35], [15, 47], [9, 22], [10, 33]];
+for (var i = 0; i < data.length; i++) {
+	row = sheet.createRow(rowNum++);
+	row.createCell(1).setCellValue(data[i][0]);
+	row.createCell(2).setCellValue(data[i][1]);
+}
+
+// Create a style for the sum
+var sumStyle = workbook.createCellStyle();
+// Clone the default font, so we won't be changing the default
+var font = sumStyle.cloneFont();
+font.underline = scopes.svyExcelUtils.FONT_UNDERLINE.DOUBLE_ACCOUNTING;
+font.isBold = true;
+
+// Create formula cells at the bottom
+row = sheet.createRow(rowNum++);
+cell = row.createCell(1);
+cell.setCellStyle(sumStyle);
+cell.setCellFormula("SUM(" + scopes.svyExcelUtils.getCellReferenceFromRange(2, 1 + data.length, 1, 1) + ")");
+
+cell = row.createCell(2);
+cell.setCellStyle(sumStyle);
+cell.setCellFormula("SUM(" + scopes.svyExcelUtils.getCellReferenceFromRange(2, 1 + data.length, 2, 2) + ")");
+
+// Write to file
+var success = workbook.writeToFile("d:\\test.xlsx");
 ```
 
 # Architecture
