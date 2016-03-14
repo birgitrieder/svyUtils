@@ -41,7 +41,7 @@ The following lines need to be added to the **`<resources>`** section of the jnl
 <jar href="/plugins/poi/xdocreport-1.0.4.jar" download="eager" version="%%version%%"/>
 ```
 
-An example Jasper jnlp can be downloaded here: **[servoy_jasperreports.jar.jnlp](/Servoy/svyUtils/wiki/svyExcelUtils/plugins/servoy_jasperreports.jar.jnlp)**
+An example Jasper jnlp file can be downloaded here: **[servoy_jasperreports.jar.jnlp](/Servoy/svyUtils/wiki/svyExcelUtils/plugins/servoy_jasperreports.jar.jnlp)**
 
 You may sign the libraries in the poi directory just as you would sign any plugin. For convenience all these libraries are signed with Servoy's certificate. So if you do not sign the application server with your own certificate, you should not run into signature problems.
 
