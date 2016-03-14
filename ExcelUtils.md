@@ -92,14 +92,22 @@ cell.setCellStyle(sumStyle);
 cell.setCellFormula("SUM(" + scopes.svyExcelUtils.getCellReferenceFromRange(2, 1 + data.length, 2, 2) + ")");
 
 // Write to file
-var success = workbook.writeToFile("d:\\test.xlsx");
+var success = workbook.writeToFile("C:\\Temp\\test.xlsx");
 ```
 
 The resulting xlsx file looks like this:
 
-![Alt attribute text Here](images/sample_xlsx.png)
-# Architecture
+![Alt attribute text Here](svyExcelUtils/images/sample_xlsx.png)
 
+# Reading excel files
+Typically, you want to access the data of an excel sheet. See this code snippet how svyExcelUtils helps you with that:
+
+```javascript
+var workbook = scopes.svyExcelUtils.getWorkbook('C:\\Temp\\test.xlsx');
+var sheet = workbook.getSheet('Test');
+var data = sheet.getSheetData(true, 1, 5, 1, 2);
+application.output(data.getAsText('\t','\n','',true));
+```
 ### Logger Hierarchy
 
 
