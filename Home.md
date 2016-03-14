@@ -25,6 +25,10 @@ Set of utility methods specifically for the Servoy Smart Client
 ------------------
 Set of utility methods to read, create and manipulate Excel Workbooks. Does not require Microsoft Excel.
 
+Table Grid
+------------------
+Creates in-memory data sources and table view forms of any JSDatSet or JSFoundSet that can be shown in a given tab panel. This is useful if you need to show for example the result of an aggregate query in a table form or just need an intermediate table to display.
+
 Custom Dialogs
 ------------------
 Provides the ability to create simple dialogs containing any number of different fields and text labels. Dialogs are laid out in a a simple two column label/field grid. Dialogs are web client compatible, meaning they handle continuations.
