@@ -97,7 +97,7 @@ var success = workbook.writeToFile("C:\\Temp\\test.xlsx");
 
 The resulting xlsx file looks like this:
 
-![Alt attribute text Here](svyExcelUtils/images/sample_xlsx.png)
+![Excel file](svyExcelUtils/images/sample_xlsx.png)
 
 # Reading excel files
 Typically, you want to access the data of an excel sheet. See this code snippet how svyExcelUtils helps you with that:
