@@ -20,7 +20,12 @@ In the jnlp file you will find some entries like these
    <package name="java_cup.runtime.*" part="xalan" recursive="true"/>
 ```
 
-Either remove or comment these lines out (by nesting them into a comment <!-- ... -->). To not run into **conflicts in developer, remove these two files** from application_server\plugins\servoy_jasperreports or rename them from *.jar to *.unused or whatever, so they don't get loaded by Servoy developer.
+Either remove or comment these lines out (by nesting them into a comment <!-- ... -->). To not run into **conflicts in developer, remove or rename from *.jar to *.unused
+
+* xalan-xxx.jar and poi-xxx.jar inside application_server\plugins\servoy_jasperreports
+* jakarta-poi.jar inside application_server\plugins\jakarta-poi
+
+so they don't get loaded by Servoy developer.
 
 #### Add a few entries to the jnlp file
 
