@@ -20,7 +20,7 @@ In the jnlp file you will find some entries like these
    <package name="java_cup.runtime.*" part="xalan" recursive="true"/>
 ```
 
-Either remove or comment these lines out (by nesting them into a comment <!-- ... -->). To not run into **conflicts in developer, remove or rename from *.jar to *.unused
+Either remove or comment these lines out (by nesting them into a comment <!-- ... -->). To not run into **conflicts in developer**, remove or rename from *.jar to *.unused
 
 * xalan-xxx.jar and poi-xxx.jar inside application_server\plugins\servoy_jasperreports
 * jakarta-poi.jar inside application_server\plugins\jakarta-poi
