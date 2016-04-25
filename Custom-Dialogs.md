@@ -33,3 +33,7 @@ application.output('Current password is ' + result[0]);
 application.output('New password is ' + result[1]);
 application.output('New password repeat is ' + result[2]);
 ```
+
+The resulting dialog looks like this:
+
+![Dialog example](svyCustomDialogs/images/svyCustomDialogs_2.png)
