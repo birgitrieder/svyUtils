@@ -135,6 +135,7 @@ customDialog
   * `closeDialog()` to close the dialog from code
   * `createForm()` to create and return a JSForm
   * methods to control the layout of the dialog such as `setColumnSpacing()`, `setDefaultFieldWidth()` etc.
+  * `onClose` property to control the behaviour of the close box in the title bar. If set to `scopes.svyCustomDialogs.ON_CLOSE.IGNORE` the dialog can only be closed by clicking a button.
 
 * DialogComponent object and subclasses for different field types (Button, TextField, TextArea, ...)
 
