@@ -35,7 +35,7 @@ Provides the ability to create simple dialogs containing any number of different
 
 [LogManager Appenders](https://github.com/Servoy/svyUtils/wiki/LogManager-Appenders)
 ------------------
-Provides a set of Appenders plugins for the [LogManager](https://github.com/Servoy/svyUtils/wiki/LogManager) Loggers. The implemented appenders allow to append logs in database (DbAppender), log to files (RollingFileAppender), log to email (EmailAppender) and log to a console window (PopupAppender). 
+Provides a set of Appender plugins for [SvyLogManager](https://github.com/Servoy/svyUtils/wiki/LogManager) loggers. The implemented appenders allow to append logs in database (DbAppender), log to files (RollingFileAppender), log to email (EmailAppender) and log to a console window (PopupAppender). 
 
 UnitTest Utils
 ------------------
