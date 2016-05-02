@@ -1,10 +1,10 @@
 ## Introduction
 This module provides a set of extra appenders for the svyLogManager scope. Currently, these appenders are available:
 
-* [RollingFileAppender](#RollingFileAppender): logs to file
-* [DbAppender](#DbAppender): log to a database table
-* [EmailAppender](#EmailAppender): send log events via email
-* [PopupAppender](#PopupAppender): logs to a small console window
+* [RollingFileAppender](#rollingfileappender): logs to file
+* [DbAppender](#dbappender): log to a database table
+* [EmailAppender](#emailappender): send log events via email
+* [PopupAppender](#popupappender): logs to a small console window
 
 ## Adding appenders to the svyLogManager configuration
 
