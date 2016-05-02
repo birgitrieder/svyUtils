@@ -33,7 +33,7 @@ Creates in-memory data sources and table view forms of any JSDatSet or JSFoundSe
 ------------------
 Provides the ability to create simple dialogs containing any number of different fields and text labels. Dialogs are laid out in a a simple two column label/field grid. Dialogs are web client compatible, meaning they handle continuations.
 
-LogManagerAppenders Utils
+LogManager Appenders
 ------------------
 Provides a set of Appenders plugins for the [LogManager](https://github.com/Servoy/svyUtils/wiki/LogManager) Loggers. The implemented appenders allow to append logs in database and in a log file 
 
